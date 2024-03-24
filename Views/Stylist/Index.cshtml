@@ -1,0 +1,58 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model IEnumerable<Hairsalon.Models.StylistModel>
+
+@{
+    ViewData["Title"] = "Frisörer";
+}
+
+<div class="container-fluid admin-container">
+    <div class="row">
+        <section class="col-lg-12">
+        <br>
+            <h1>@ViewData["Title"]</h1>   
+            <p>
+                <a asp-action="Create">Lägg till frisör</a>
+            </p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Firstname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Lastname)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Biography)
+                            </th>
+                            <th>
+                            </th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Firstname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lastname)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Biography)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Ändra</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id">Radera</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+

@@ -1,0 +1,76 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model Hairsalon.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Boka tid";
+}
+
+<div class="container-fluid public-container">
+    <div class="row">
+        <section class="col-lg-6 text-column">
+            <h1>@ViewData["Title"]</h1><br>
+            <p>Här kan du skicka in en bokningsförfrågan för den behandling du är intresserad av. När vi mottagit och accepterat din förfrågan skickar vi en bekräftelse på bokningen till din e-postadress.<br><br>Du kan läsa
+                mer om våra behandlingar på <a href="/behandlingar">Behandlingar.</a></p><br>
+                <p>Våra öppettider är kl 10:00 - 18:00 alla dagar utom röda dagar och klämdagar.</p><br>
+            <form asp-action="Post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="mr-md-2" asp-for="TreatmentModelId">Välj behandling i listan</label>&nbsp;&nbsp;
+                            <select asp-for="TreatmentModelId" class ="form-control" asp-items="ViewBag.TreatmentModelId"></select>
+                            <span asp-validation-for="TreatmentModelId" class="text-danger"></span>
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <label asp-for="AppointmentDate"></label>
+                        <input id="AppointmentDate" asp-for="AppointmentDate" type="date" class="form-control">
+                        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                    </div><br>
+                    <div class="form-group">
+                        <label class="mr-md-2" asp-for="AppointmentTime">Välj tidsintervall i listan</label>&nbsp;&nbsp;
+                        <select asp-for="AppointmentTime" class="custom-select mr-md-2">
+                            <option>10:00 - 12:00</option>
+                            <option>12:00 - 14:00</option>
+                            <option>14:00 - 16:00</option>
+                            <option>16:00 - 18:00</option>
+                        </select>
+                        <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                    </div><br>
+                    <div class="form-group col-lg-10">
+                        <label asp-for="Name">Förnamn och efternamn</label>
+                        <input asp-for="Name" type="text" class="form-control">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div><br>
+                    <div class="form-row">
+                    <div class="form-group col-lg-10">
+                        <label asp-for="Email">E-postadress</label>
+                        <input asp-for= "Email" type="email" class="form-control">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div><br>
+                    <div class="form-group col-lg-8">
+                        <label asp-for="Phonenr">Telefonnummer</label>
+                        <input asp-for="Phonenr" type="text" class="form-control">
+                        <span asp-validation-for="Phonenr" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-lg-8">
+                        <input type="hidden" asp-for="Status" value="Obearbetad">
+                    </div>
+                </div><br>
+                <p>Genom att skicka in bokningsförfrågan godkänner du att vi sparar dina uppgifter för att behandla din förfrågan.</p><br>
+                <button type="submit" class="btn">SKICKA IN</button>
+            </form>
+        </section>
+        <div class="col-lg-6 picture-column">
+            <picture>
+                <source media="(max-width: 650px)" srcset="../images/styling-short.jpg">
+                <source media="(min-width: 651px)" srcset="../images/styling-long.jpg">
+                <img src="../images/styling-short.jpg" alt="">
+            </picture>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Min profil";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+<div class="manage-admin">
+    <h2>@ViewData["Title"]</h2>
+    <partial name="_StatusMessage" for="StatusMessage" />
+    <div class="row">
+        <div class="col-md-12">
+            <p>Här kan du ändra ditt lösenord och hantera dina data. </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

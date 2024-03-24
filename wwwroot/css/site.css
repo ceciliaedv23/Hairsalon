@@ -1,0 +1,338 @@
+/* CSS-kod för projektuppgiften i kurs DT191G, en lösning skapad av Cecilia Edvardsson */
+
+/* Mobile first */
+
+/* Allmänt */
+
+body {
+  font-family: Calibri, "Gill Sans", "Gill Sans MT";
+}
+
+main .btn {
+  width: 200px;
+  text-align: center;
+  margin: 0;
+  background-color: #641589 !important;
+  color: white !important;
+}
+
+main .btn:hover {
+  text-decoration: underline;
+  background-color: rgb(124, 79, 124) !important;
+}
+
+h2 {
+  font-size: 23px !important;
+}
+
+form {
+  max-width: 400px;
+  text-align: left;
+  padding-top: 20px;
+  margin: auto;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid rgb(124, 79, 124) !important;
+}
+
+select {
+  padding: 5px 10px;
+}
+
+footer {
+  padding: 70px 30px 30px;
+  font-size: 14px;
+}
+
+/* Nav */
+
+.navbar-nav {
+  text-align: center;
+  border-top: 1px rgb(112, 106, 106) solid;
+  border-bottom: 1px rgb(112, 106, 106) solid;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.navbar-brand img {
+  width: 230px;
+}
+
+.navbar-nav li a {
+  font-size: 20px;
+}
+
+.navbar-nav li a:hover {
+  text-decoration: underline;
+}
+
+/* Kolumner */
+
+.text-column {
+  padding-top: 20px;
+  text-align: center;
+  max-width: 800px;
+}
+
+.text-column h1 {
+  padding-bottom: 0;
+}
+
+.text-column p {
+  margin: auto;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.text-column form p {
+  margin: auto;
+  text-align: left;
+  padding: 20px 0;
+}
+
+.picture-column {
+  padding: 40px;
+  text-align: center;
+}
+
+.picture-column img {
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px 0 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+/* Containers på flera sidor */
+
+.public-container,
+.admin-container {
+  margin: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.admin-links-footer a,
+.admin-links-footer p {
+  display: inline;
+}
+
+.adminfunctions-container h1 {
+  padding-top: 50px;
+}
+
+.adminfunctions-container form {
+  margin: auto;
+}
+
+.adminfunctions-container {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin: auto;
+  width: 100%;
+}
+
+.adminfunctions-container form button {
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  background-color: #641589 !important;
+  color: white !important;
+}
+
+.inneradminfunctions-container {
+  text-align: left;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  margin: auto;
+  width: 100%;
+}
+
+.inneradminfunctions-container h1 {
+  text-align: center;
+}
+
+.inneradminfunctions-container section form {
+  margin: auto;
+  max-width: 400px;
+}
+
+.inneradminfunctions-container a {
+  padding-top: 40px;
+}
+
+/* Listor */
+
+.public-container ul,
+.public-container ul {
+  padding: 40px 0 0;
+  margin: 0 auto;
+}
+
+.public-container ul li,
+.public-container ul li {
+  list-style-type: none;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.public-container ul li p,
+.public-container ul li p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Inloggad admin */
+
+.manageaccount {
+  max-width: 900px;
+  padding-top: 50px;
+}
+
+.manageaccount .middle {
+  padding: 20px;
+}
+
+#download-data {
+  margin: 0;
+}
+
+.manage-admin {
+  margin-bottom: 50px;
+}
+
+/* Mini-storlek mobil */
+@media SCREEN and (max-width: 350px) {
+  .navbar-brand img {
+    width: 180px;
+  }
+
+  footer {
+    display: block;
+    padding-bottom: 20px;
+  }
+}
+
+/* Större storlekar */
+
+@media SCREEN and (min-width: 1000px) {
+  main {
+    width: 100%;
+    margin: auto;
+  }
+
+  .navbar-nav {
+    border: none;
+  }
+
+  form {
+    max-width: 400px;
+    margin: 0;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  footer {
+    font-size: 16px;
+    padding: 100px 60px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .admin-links-footer a,
+  .admin-links-footer p {
+    display: inline;
+    margin: 0 5px;
+  }
+
+  .adminfunctions-container {
+    padding-bottom: 40px;
+  }
+
+  .adminfunctions-container form {
+    margin: auto;
+  }
+
+  .inneradminfunctions-container section {
+    margin: auto;
+    width: 800px;
+  }
+
+  .manage-admin {
+    margin-bottom: 200px;
+  }
+
+  .public-container .text-column {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .public-container .text-column p {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .picture-column {
+    padding: 0;
+  }
+
+  .public-container,
+  .admin-container {
+    padding: 70px 20px 40px;
+  }
+
+  .public-container ul li {
+    text-align: left;
+  }
+
+  .public-container ul li p {
+    text-align: left;
+    margin: 0;
+  }
+
+  .public-container img {
+    padding: 0;
+    max-width: 480px;
+  }
+
+  .clientindex-container {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .clientindex-container .text-column,
+  .clientindex-container .picture-column {
+    margin: 0 auto;
+  }
+
+  .clientindex-container .text-column p {
+    margin: 5px auto;
+    max-width: 500px;
+  }
+
+  .clientindex-container .text-column h1 {
+    margin: 20px auto;
+    text-align: center;
+  }
+}
+
+@media SCREEN and (min-width: 1650px) {
+  main {
+    max-width: 1400px;
+  }
+
+  footer {
+    padding: 200px 30px 10px;
+  }
+}

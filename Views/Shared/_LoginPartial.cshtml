@@ -1,0 +1,13 @@
+﻿
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (!SignInManager.IsSignedIn(User))
+{
+<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Logga in</a>
+<p>|</p> 
+<a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Registrera dig</a>
+}

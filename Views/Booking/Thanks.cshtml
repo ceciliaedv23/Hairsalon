@@ -1,0 +1,21 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@{
+    ViewData["Title"] = "Tack";
+}
+
+<div class="container-fluid public-container">
+    <div class="row">
+        <section class="col-lg-6 text-column">
+            <h1>@ViewData["Title"]</h1><br>
+            <p>Nu bearbetar vi din förfrågan och återkommer med bekräftelse på accepterad bokning till din e-postadress.</p>
+        </section>
+        <div class="col-lg-6 picture-column">
+            <picture>
+                <source media="(max-width: 650px)" srcset="../images/styling-short.jpg">
+                <source media="(min-width: 651px)" srcset="../images/styling-long.jpg">
+                <img src="../images/styling-short.jpg" alt="">
+            </picture>
+        </div>
+    </div>
+</div>

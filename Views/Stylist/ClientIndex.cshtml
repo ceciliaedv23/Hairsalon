@@ -1,0 +1,31 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model IEnumerable<Hairsalon.Models.StylistModel>
+
+@{
+    ViewData["Title"] = "Frisörer";
+}
+
+<div class="container-fluid public-container">
+    <div class="row">
+        <section class="col-lg-6 text-column">
+            <h1>@ViewData["Title"]</h1><br>
+            <p>Våra frisörer har alla gesällbrev, stor praktisk vana av frisöryrket och ambitionen att ge dig en hårupplevelse utöver det vanliga. Fråga gärna efter tips om vad som passar just din look och hur du kan vårda din frisyr efter ditt besök hos oss. </p>
+            <ul>
+            @foreach (var item in Model) {
+                    <li>
+                        <h2>@item.Firstname</h2>
+                        <p>@item.Biography</p>
+                    </li>
+                }
+            </ul>
+        </section>
+        <div class="col-lg-6 picture-column">
+            <picture>
+                <source media="(max-width: 650px)" srcset="../images/stylists-short.jpg">
+                <source media="(min-width: 651px)" srcset="../images/stylists-long.jpg">
+                <img src="../images/stylists-short.jpg" alt="">
+            </picture>
+        </div>
+    </div>
+</div>

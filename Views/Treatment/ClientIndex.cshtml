@@ -1,0 +1,33 @@
+
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model IEnumerable<Hairsalon.Models.TreatmentModel>
+
+@{
+    ViewData["Title"] = "Behandlingar";
+}
+
+<div class="container-fluid public-container">
+    <div class="row">
+        <section class="col-lg-6 text-column">
+            <h1>@ViewData["Title"]</h1><br>
+            <p>Vi erbjuder klippning och olika typer av färgbehandlingar. Nedan anges från-priser då tjocklek och längd på ditt hår eventuellt kan påverka tidsåtgång och materialkostnad. Konsultation, tvätt och styling ingår alltid. </p>
+            <ul>
+            @foreach (var item in Model) {
+                <li>
+                    <h2>@item.Name</h2>
+                    <p>@item.Description</p>
+                    <p><em>@item.Price :-</em></p>
+                </li>
+            }
+            </ul>
+        </section>
+        <div class="col-lg-6 picture-column">
+            <picture>
+                <source media="(max-width: 650px)" srcset="../images/longblonde-short.jpg">
+                <source media="(min-width: 651px)" srcset="../images/longblonde-long.jpg">
+                <img src="../images/longblonde-short.jpg" alt="">
+            </picture>
+        </div>
+    </div>
+</div>

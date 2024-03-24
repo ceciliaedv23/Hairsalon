@@ -1,0 +1,47 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Logga in";
+}
+
+<div class="container-fluid adminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1 class="text-center">@ViewData["Title"]</h1><br>
+            <form id="account" method="post">
+                <h2>Fyll i dina inloggningsuppgifter.</h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label">E-postadress</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true"/>
+                    <label asp-for="Input.Password" class="form-label">Lösenord</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        Kom ihåg mig
+                    </label>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn">LOGGA IN</button>
+                </div><br>
+                <div>
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Glömt ditt lösenord?</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

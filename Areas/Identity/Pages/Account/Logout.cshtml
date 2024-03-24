@@ -1,0 +1,28 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Logga ut";
+}
+
+<div class="container-fluid adminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1 class="text-center">@ViewData["Title"]</h1><br>
+            <p>Bekräfta att du vill logga ut ur administratörsläget.</p>
+            @{
+                if (User.Identity?.IsAuthenticated ?? false)
+                {
+                <form class="form-inline text-center" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button type="submit" class="btn">LOGGA UT</button>
+                </form>
+                <br><br>
+                <a class="btn" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">HANTERA MIN PROFIL</a>
+                }
+                else
+                {
+                <p>Du har nu blivit utloggad.</p>
+                }
+            }
+        </section>
+    </div>
+</div>

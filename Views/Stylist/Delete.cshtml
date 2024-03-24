@@ -1,0 +1,41 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model Hairsalon.Models.StylistModel
+
+@{
+    ViewData["Title"] = "Radera frisör";
+}
+
+<div class="container-fluid inneradminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1>@ViewData["Title"]</h1>
+            <hr />
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Firstname)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Lastname)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Biography)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Biography)
+                </dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="RADERA" class="btn" /><br><br>
+                <a asp-action="Index">Tillbaka till listan med frisörer</a>
+            </form>
+        </section>
+    </div>
+</div>

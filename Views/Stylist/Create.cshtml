@@ -1,0 +1,41 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model Hairsalon.Models.StylistModel
+
+@{
+    ViewData["Title"] = "Lägg till frisör";
+}
+
+<div class="container-fluid inneradminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1>@ViewData["Title"]</h1>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Firstname" class="control-label"></label>
+                    <input asp-for="Firstname" class="form-control" />
+                    <span asp-validation-for="Firstname" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="Lastname" class="control-label"></label>
+                    <input type="text" asp-for="Lastname" class="form-control" />
+                    <span asp-validation-for="Lastname" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="Biography" class="control-label"></label>
+                    <input type="textarea" asp-for="Biography" class="form-control" />
+                    <span asp-validation-for="Biography" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <input type="submit" value="LÄGG TILL" class="btn" />
+                </div>
+            </form>
+        </section>
+        <a asp-action="Index" class="text-center">Tillbaka till listan med frisörer</a>            
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,71 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model Hairsalon.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Radera bokning";
+}
+
+<div class="container-fluid inneradminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1>@ViewData["Title"]</h1>
+            <hr />
+            <dl class="row">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Phonenr)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Phonenr)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.AppointmentDate)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.AppointmentDate)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.AppointmentTime)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.AppointmentTime)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Stylist)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Stylist)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.TreatmentModel)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.TreatmentModel!.Name)
+                </dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="RADERA" class="btn" /><br><br>
+                <a asp-action="Index">Tillbaka till listan med bokningar</a>
+            </form>
+        </section>
+    </div>
+</div>

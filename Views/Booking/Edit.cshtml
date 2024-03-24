@@ -1,0 +1,76 @@
+@* Kod tillhörande lösningen till projektuppgiften i kurs DT191G, skapat av Cecilia Edvardsson *@
+
+@model Hairsalon.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Ändra bokning";
+}
+
+<div class="container-fluid inneradminfunctions-container">
+    <div class="row">
+        <section class="col-lg-12">
+            <h1>@ViewData["Title"]</h1>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="Phonenr" class="control-label"></label>
+                    <input asp-for="Phonenr" class="form-control" />
+                    <span asp-validation-for="Phonenr" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="AppointmentDate" class="control-label"></label>
+                    <input type="date" id="AppointmentDate" asp-for="AppointmentDate" class="form-control" />
+                    <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label class="mr-md-2" asp-for="AppointmentTime"></label>&nbsp;&nbsp;
+                    <select asp-for="AppointmentTime" class="custom-select mr-md-2">
+                        <option>10:00 - 12:00</option>
+                        <option>12:00 - 14:00</option>
+                        <option>14:00 - 16:00</option>
+                        <option>16:00 - 18:00</option>
+                    </select>
+                    <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="TreatmentModelId" class="control-label"></label>
+                    <select asp-for="TreatmentModelId" class="form-control" asp-items="ViewBag.TreatmentModelId"></select>
+                    <span asp-validation-for="TreatmentModelId" class="text-danger"></span>
+                </div><br>
+                <div class="form-group">
+                    <label asp-for="Stylist" class="control-label"></label>
+                    <input asp-for="Stylist" class="form-control" />
+                    <span asp-validation-for="Stylist" class="text-danger"></span>
+                </div><br>
+               <div class="form-group">
+                <label asp-for="Status" class="control-label">Status &nbsp; &nbsp;</label>
+                <select asp-for="Status" class="custom-select mr-md-2">
+                            <option>Obearbetad</option>
+                            <option>Accepterad</option>
+                            <option>Avvisad</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div><br>
+                <div class="form-group">
+                    <input type="submit" value="SPARA" class="btn" />
+                </div>
+            </form>
+        </section>
+        <a asp-action="Index" class="text-center">Tillbaka till listan med bokningar</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
